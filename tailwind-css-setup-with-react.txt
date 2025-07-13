@@ -1,0 +1,61 @@
+           Complete Tailwind CSS Installation
+       -------------------------------------------
+
+
+npm install
+npm install -D tailwindcss@3.3.5 postcss autoprefixer
+npx tailwindcss init -p
+
+# If CMD Gives error so run these CMD's :
+-----------------------------------------
+npm cache clean --force
+Remove-Item -Recurse -Force node_modules
+Remove-Item -Force package-lock.json
+ 
+(After these again re-install )
+
+
+
+##Basic CMD of Installation :
+-----------------------------
+
+--> npm install -D tailwindcss postcss autoprefixer
+
+--> npx tailwindcss init -p
+
+           OR
+
+If cmd are not work so create both files manually :-->        
+------------------------------------------------------------------------------
+--> tailwind.config.js :
+    ------------------- 
+      /** @type {import('tailwindcss').Config} */
+          export default {
+            content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+          theme: {
+            extend: {},
+            },
+           plugins: [],
+          };
+
+
+--> postcss.config.js :
+-----------------------
+        export default {
+            content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+              theme: {
+               extend: {},
+               },
+                plugins: [],
+             }
+--------------------------------------------------------------------------------
+
+--> src/index.css ya src/style.css :
+        @tailwind base;
+        @tailwind components;
+        @tailwind utilities;
+
+--> main.jsx :
+           import './index.css'
+                   OR
+               ./style.css 
